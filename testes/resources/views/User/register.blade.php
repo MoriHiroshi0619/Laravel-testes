@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h2 class="mb-4">Crie uma conta</h2>
-                <form method="POST" action="{{ route('register.post') }}">
+                <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group m-1 ">
                         <label for="name">Nome:</label>

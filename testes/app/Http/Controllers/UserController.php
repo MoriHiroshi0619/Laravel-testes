@@ -19,7 +19,7 @@ class UserController extends Controller
         if($user->save()){
             return redirect()->route('login')->with('msg', 'Usuario criado com sucesso');
         }else{
-            return redirect()->route('User.register')->with('error', 'Erro ao criar usuario');
-        };
+            return back()->with('error', 'Erro ao criar usuario');
+        }
     }
 }
