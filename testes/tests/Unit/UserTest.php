@@ -3,14 +3,25 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use App\Models\User;
 
 class UserTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     */
-    public function test_example(): void
+    /** @test */
+    public function check_if_user_columns_is_correct(): void
     {
-        $this->assertTrue(true);
+        $user = new User;
+
+        $expected = [
+          'name',
+          'email',
+          'password'
+        ];
+
+        $arrayCompared = array_diff($expected, $user->getFillable());
+
+//        dd($arrayCompared);
+
+        $this->assertEquals(0, count($arrayCompared));
     }
 }
