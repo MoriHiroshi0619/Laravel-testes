@@ -16,7 +16,7 @@ Route::get('login',[LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('register',[UserController::class, 'create'])->name('register');
-Route::post('register',[UserController::class, 'store'])->name('register');
+Route::post('register',[UserController::class, 'store'])->name('register/**/');
 
 Route::resource('/customers', 'CustomerController')->middleware('auth');
 
